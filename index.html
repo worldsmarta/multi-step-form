@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Multi-step form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="desktop-container">
+    <header>
+      <!-- Sidebar start -->
+      <div class="sidebar-start">
+        <div class="sidebar-step">
+          <p class="sidebar-num">1</p>
+          <p class="desktop-side-txt">Step 1 <span>Your info</span></p>
+        </div>
+        <div class="sidebar-step">
+          <p class="sidebar-num">2</p>
+          <p class="desktop-side-txt">Step 2<span>Select</span></p>
+        </div>
+        <div class="sidebar-step">
+          <p class="sidebar-num">3</p>
+          <p class="desktop-side-txt">Step 3 <span>Add-ons</span></p>
+        </div>
+        <div class="sidebar-step">
+          <p class="sidebar-num">4</p>
+          <p class="desktop-side-txt">Step 4 <span>Summary</span></p>
+        </div>
+      </div>
+      <!-- Sidebar end -->
+    </header>
+    <!-- Step 1 start -->
+    <form action="#" class="form" id="form">
+      <div id="form-overlay">
+        <div class="step-1 steps-list-item active">
+          <h1>Personal info</h1>
+          <p>Please provide your name, email address, and phone number.</p>
+          <label for="name-el">name</label>
+          <input type="text" class="input-focus" name="name" id="name-el" placeholder="e.g. Smarta Dey" id="name"
+            required>
+          <label for="email-el">email address</label>
+          <input type="email" class="input-focus" name="email" id="email-el" placeholder="e.g. smartadey@gmail.com"
+            id="email" required>
+          <label for="phone-el" class="phone-required">phone number <span id="phone-field-notification">this field is
+              required</span></label>
+          <input type="number" class="input-focus" name="phone" id="phone-el" placeholder=" e.g. +91 9438524384"
+            id="phone" required>
+          <div id="form-btn-overlay">
+            <button type="submit" class="next-step-btn" name="submit" id="form-btn">next Step</button>
+          </div>
+          <!-- state step2 -->
+        </div>
+        <div class="step-2 steps-list-item">
+          <h1>Select your plan</h1>
+          <p>You have the option of monthly or yearly billing.</p>
+          <div class="plan-container">
+            <div class="plans">
+              <img src="assets/images/icon-arcade.svg" alt="arcade">
+              <div class="select-items">
+                <p>Arcade <span id="arcade-yearly" class="price" data-price="$9/mo">$9/mo</span></p>
+                <p class="gift"></p>
+              </div>
+            </div>
+            <div class="plans">
+              <img src="assets/images/icon-advanced.svg" alt="Advanced">
+              <div class="select-items">
+                <p>Advanced <span id="advanced-yearly" class="price" data-price="$12/mo">$12/mo</span></p>
+                <p class="gift"></p>
+              </div>
+            </div>
+            <div class="plans">
+              <img src="assets/images/icon-pro.svg" alt="pro">
+              <div class="select-items">
+                <p>Pro <span id="pro-yearly" class="price" data-price="$15/mo">$15/mo</span></p>
+                <p class="gift"></p>
+              </div>
+            </div>
+          </div>
+          <div class="monthly-switch">
+            <p id="month">monthly</p>
+            <img src="assets/images/month.png" alt="switch-img" id="toggle-checked">
+            <p class="year-switch" id="year">yearly</p>
+          </div>
+        </div>
+        <!-- start step 3 -->
+        <div class="step-3 steps-list-item">
+          <h1>Pick add-ons</h1>
+          <p>Add-ons help enhance your gaming experience.</p>
+          <div class="service-container first-child">
+            <input type="checkbox" title="checked1" name="checked">
+            <p class="title">Online service<span>Access to multiplayer games</span></p>
+            <p class="add-on-price" data-add="+$1/mo">+$1/mo</p>
+          </div>
+          <div class="service-container">
+            <input type="checkbox" title="checked2" name="checked">
+            <p class="title">Larger storage<span>Extra 1TB of cloud save</span></p>
+            <p class="add-on-price" data-add="+$2/mo">+$2/mo</p>
+          </div>
+          <div class="service-container">
+            <input type="checkbox" title="checked3" name="checked">
+            <p class="title">Customizable Profile<span>Custom theme on your profile</span></p>
+            <p class="add-on-price" data-add="+$2/mo">+$2/mo</p>
+          </div>
+        </div>
+        <!-- start step -->
+        <div class="step-4 steps-list-item" id="replace-step5">
+          <h1>Finishing up</h1>
+          <p>Double-check everything looks OK before confirming.</p>
+          <div class="selected-plans" id="selected-plans">
+            <div class="plans-selected-price-container">
+              <p id="plan-name"></p>
+              <p id="price"></p>
+            </div>
+            <div class="change-container">
+              <span id="change" class="change">change</span>
+            </div>
+            <div class="addon-service-container" id="selected-addon"></div>
+            <div class="addon-service-container" id="selected-addon-one"></div>
+            <div class="addon-service-container" id="selected-addon-two"></div>
+            <div id="customize-addon" class="addon-service-container"></div>
+          </div>
+          <div class="total-container" id="total-container"></div>
+        </div>
+      </div>
+    </form>
+    <div class="block-content">hide this</div>
+    <div class="nextbtn-container">
+      <div class="taskbar">
+        <span class="go-back" id="go-back" name="go-back">go back</span>
+        <button type="submit" class="next-step-btn" name="submit" id="next-btn">next Step</button>
+        <button type="button" name="confirm" id="confirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
